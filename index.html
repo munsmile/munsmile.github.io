@@ -78,7 +78,7 @@
     <label><input type="checkbox" class="row-check" value="1"> 1열</label>
     <label><input type="checkbox" class="row-check" value="2"> 2열</label>
     <label><input type="checkbox" class="row-check" value="3"> 3열</label>
-    <button onclick="window.print()">Print</button>
+    <a href="#" id="print-button">Print</a>
   </div>
 
   <div id="template-wrapper">
@@ -116,6 +116,13 @@
 
     checkboxes.forEach(cb => cb.addEventListener('change', renderImages));
 
+    document.getElementById("print-button").addEventListener("click", function (e) {
+      e.preventDefault();
+      setTimeout(() => {
+        window.print();
+      }, 100);
+    });
+    
     function renderImages() {
       [...container.querySelectorAll('.cassette-img')].forEach(el => el.remove());
 
