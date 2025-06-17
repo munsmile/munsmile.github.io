@@ -155,8 +155,12 @@
       let labelWidthMM = 95;
       let labelHeightMM = 44.5;
       const startXmm = 10;
-      const startYmm = 17;
+      const startYmm = 18.8;
 
+      if (type.includes("type3")){
+        startXmm = 13.6;
+      }
+      
       const type = templateSelector.value;
       if (type.includes("type2")) {
         labelWidthMM = 94;
